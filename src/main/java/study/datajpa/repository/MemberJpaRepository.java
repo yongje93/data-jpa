@@ -1,12 +1,11 @@
 package study.datajpa.repository;
 
-import org.springframework.stereotype.Repository;
-import study.datajpa.entity.Member;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
+import study.datajpa.entity.Member;
 
 @Repository
 public class MemberJpaRepository {

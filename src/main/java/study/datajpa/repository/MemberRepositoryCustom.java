@@ -1,9 +1,9 @@
 package study.datajpa.repository;
 
+import java.util.List;
 import study.datajpa.entity.Member;
 
-import java.util.List;
-
 public interface MemberRepositoryCustom {
+
     List<Member> findMemberCustom();
 }
