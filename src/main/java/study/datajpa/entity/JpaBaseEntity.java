@@ -1,12 +1,11 @@
 package study.datajpa.entity;
 
-import lombok.Getter;
-
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import java.time.LocalDateTime;
+import lombok.Getter;
 
 @MappedSuperclass
 @Getter
