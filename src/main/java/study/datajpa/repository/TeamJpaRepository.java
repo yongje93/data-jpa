@@ -23,7 +23,7 @@ public class TeamJpaRepository {
     }
 
     public List<Team> findAll() {
-        return em.createQuery("select t from Team m", Team.class)
+        return em.createQuery("select t from Team t", Team.class)
                 .getResultList();
     }
 
