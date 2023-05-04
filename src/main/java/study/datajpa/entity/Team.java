@@ -22,7 +22,7 @@ public class Team {
 
     @Id
     @GeneratedValue
-    @Column
+    @Column(name = "team_id")
     private Long id;
     private String name;
 
