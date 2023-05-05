@@ -2,6 +2,7 @@ package study.datajpa.repository;
 
 import jakarta.persistence.LockModeType;
 import jakarta.persistence.QueryHint;
+import java.util.Collection;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,7 +34,7 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     List<MemberDto> findMemberDto();
 
     @Query("select m from Member m where m.username in :names")
-    List<Member> findByNames(@Param("names") List<String> names);
+    List<Member> findByNames(@Param("names") Collection<String> names);
 
     @Query(value = "select m from Member m left join m.team t", countQuery = "select count(m) from Member m")
     Page<Member> findByAge(int age, Pageable pageable);
