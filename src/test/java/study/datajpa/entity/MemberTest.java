@@ -12,6 +12,7 @@ import study.datajpa.repository.MemberRepository;
 
 @SpringBootTest
 @Transactional
+@Rollback(value = false)
 class MemberTest {
 
     @PersistenceContext
