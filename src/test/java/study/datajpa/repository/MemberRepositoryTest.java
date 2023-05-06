@@ -170,7 +170,8 @@ class MemberRepositoryTest {
         //when
         Page<Member> page = memberRepository.findByAge(age, pageRequest);
 
-//        Page<MemberDto> memberDto = page.map(m -> new MemberDto(m.getId(), m.getUsername(), null));
+        // API에 전달 할 때는 아래 처럼 엔티티가 아닌 DTO를 반환
+        Page<MemberDto> memberDto = page.map(m -> new MemberDto(m.getId(), m.getUsername(), null));
 
         //then
         List<Member> content = page.getContent();
@@ -196,7 +197,8 @@ class MemberRepositoryTest {
         //when
         int resultCount = memberRepository.bulkAgePlus(20);
         // 벌크 연산 이후에는 영속성 컨텍스트를 날려야한다. 혹은 clearAutomatically = true 옵션 사용
-//        em.clear();
+        em.flush();
+        em.clear();
 
         List<Member> result = memberRepository.findByUsername("member5");
         Member member5 = result.get(0);
