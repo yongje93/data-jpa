@@ -247,6 +247,7 @@ class MemberRepositoryTest {
         em.clear();
 
         //when
+        //readOnly 속성이라 변경감지 X
         Member findMember = memberRepository.findReadOnlyByUsername("member1");
         findMember.setUsername("member2");
 
