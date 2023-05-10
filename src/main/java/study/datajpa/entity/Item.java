@@ -30,6 +30,9 @@ public class Item implements Persistable<String> {
         return id;
     }
 
+    /**
+     * @CreatedDate에 값이 없으면 새로운 엔티티로 판단
+     */
     @Override
     public boolean isNew() {
         return createdDate == null;
