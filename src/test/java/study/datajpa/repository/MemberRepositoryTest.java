@@ -327,13 +327,27 @@ class MemberRepositoryTest {
         em.persist(teamA);
         em.persist(new Member("m1", 0, teamA));
         em.persist(new Member("m2", 0, teamA));
+
         em.flush();
+        em.clear();
 
         //when
-        List<UsernameOnlyDto> result = memberRepository.findProjectionsByUsername("m1", UsernameOnlyDto.class);
+//        List<UsernameOnly> result = memberRepository.findProjectionsByUsername("m1", UsernameOnly.class);
 
-        for (UsernameOnlyDto usernameOnly : result) {
-            System.out.println("usernameOnly = " + usernameOnly);
+//        for (UsernameOnly usernameOnly : result) {
+//            System.out.println("usernameOnly = " + usernameOnly.getUsername());
+//        }
+
+//        List<UsernameOnlyDto> result = memberRepository.findProjectionsByUsername("m1", UsernameOnlyDto.class);
+//
+//        for (UsernameOnlyDto usernameOnly : result) {
+//            System.out.println("usernameOnly = " + usernameOnly.getUsername());
+//        }
+
+        List<NestedClosedProjections> result = memberRepository.findProjectionsByUsername("m1", NestedClosedProjections.class);
+
+        for (NestedClosedProjections nestedClosedProjections : result) {
+            System.out.println("usernameOnly = " + nestedClosedProjections.getUsername());
         }
     }
 

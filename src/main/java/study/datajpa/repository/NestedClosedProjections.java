@@ -1,5 +1,8 @@
 package study.datajpa.repository;
 
+/**
+ * 중첩 구조 처리
+ */
 public interface NestedClosedProjections {
 
     String getUsername();
@@ -7,7 +10,6 @@ public interface NestedClosedProjections {
     TeamInfo getTeam();
 
     interface TeamInfo {
-
         String getName();
     }
 }

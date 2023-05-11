@@ -1,6 +1,8 @@
 package study.datajpa.repository;
 
-public interface UsernameOnly {
+import org.springframework.beans.factory.annotation.Value;
 
+public interface UsernameOnly {
+    @Value("#{target.username + ' ' + target.age + ' ' + target.team.name}")    // Open Projections
     String getUsername();
 }
